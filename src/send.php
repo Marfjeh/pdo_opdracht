@@ -1,3 +1,6 @@
+<html>
+<script src="js/jquery-2.2.1.min.js"></script>
+<script src="js/mff.js">//MarfFrameWork! :D</script>
 <?php
 require_once("config.php"); //Settings containing Database, host username etc.
 
@@ -17,10 +20,11 @@ $stmt->bindParam(':email', $Email);
 $stmt->bindParam(':bericht', $bericht);
 $stmt->bindParam(':ip', $IP);
 $stmt->execute();
-echo "Succes!";
+echo("<script>goUrl('req.php');</script>");
 }
 catch(PDOException $e)
 {
   echo "Connection failed: \n" . $e->getMessage();
 }
 ?>
+</html>
